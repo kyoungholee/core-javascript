@@ -54,6 +54,23 @@ const javaScript = {
   currentVersion: 2022,
 };
 
+for( let value in javaScript ) {
+  console.log(value);
+
+  if(Object.prototype.hasOwnProperty.call(javaScript, value) ) {
+
+    console.log(value);
+
+
+  }
+}
+
+Object.prototype === {};
+
+
+
+// 이번 챕터 공부는 객체에 대한 공부다 !! 즉 객체지향 프로그래밍에서 배울만한 내용임
+
 // let key = "toString";
 
 // console.log(key in javaScript);
@@ -105,16 +122,69 @@ const javaScript = {
 // 찐 객체를 직접 쓰지말고  객체에 속성을 이용해 가져와라 위에 처럼 ! 
 
 
-for( let value in javaScript ) {
-
-  if(Object.prototype.hasOwnProperty.call(javaScript, value) ) {
-
-    console.log(value);
 
 
-  }
+
+//call 에 대한 설명 함수를 실행 시키는 능력 !! 
+// 함수가 가진 능력이니깐 함수랑 같이 쓰기 가능 
+const user = {
+  name : 'lee',
+  age : 32
 }
 
-// for ~ in 문
+function hello() {
+  // console.log(this);
+}
+
+
+//특정 함수를 불러오고 싶을떄 함수를 대신 실행해주는   call, apply, bind
+// bind는 값을 가지고 있다는 뜻 
+hello.call();
+
+
+
+
+// for ~ in 문 ============> 객체를 순한할때 사용하는게 좋다 !!! 
 // - 객체 자신의 속성만 순환하려면?
 // - 배열 객체 순환에 사용할 경우?
+
+//for ~ of를 사용 하지만 for문도 ㄷ ㅏ가능하다 
+
+let tens = [10, 100 ,1000, 10000] ;
+
+for(let value in tens) {
+  console.log(tens[value]);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
