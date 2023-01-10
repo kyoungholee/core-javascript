@@ -61,11 +61,58 @@ function getAttr(node, prop) {
     node = getNode(node);
   }
 
-
-  console.log( node.getAttribute('class') );
-
-  node.setAttribute('id', 'key');
+  return node.getAttribute(prop);
   // node.getAttribute(prop)
 }
 
 getAttr('.first', 'class');
+
+
+
+function serAttr(node, prop, aaa){
+
+  if(typeof node === 'string') {
+    node = getNode(node);
+  }
+
+  if(typeof prop !== 'string') {
+    throw new TypeError("다시 작성");
+  }
+
+  node.setAttribute(prop, aaa);
+}
+
+//first라는 노드 안에  asd에 aaaaaaaaaaaaaaaaaaaas로 지정하겠다. 
+
+serAttr('.first', 'asd', 'aaaaaaaaaaaaaaaaaaaaas');
+
+
+
+function attr(node, prop, value) {
+
+  if(!value) {
+    if(typeof node === 'string') {
+      node = getNode(node);
+    }
+
+    // console.log( first.getAttribute(prop) );
+    return node.getAttribute(prop);
+
+  }else {
+
+    if(typeof node === 'string') {
+      node = getNode(node);
+    }
+  
+    if(typeof prop !== 'string') {
+      throw new TypeError("다시 작성");
+    }
+  
+    node.setAttribute(prop, value);
+    
+  }
+}
+
+console.log (attr('.first', 'asd', 'contanier'));
+
+
