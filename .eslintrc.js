@@ -13,7 +13,8 @@ module.exports = {
     },
     /*변수 선언에 대한 오류를 해결해준다. */
     "rules": {
-        "no-unused-vars" : 'off'
+        "no-unused-vars" : 'off',
+        "no-undef" : 'off'
 
     }
 }
