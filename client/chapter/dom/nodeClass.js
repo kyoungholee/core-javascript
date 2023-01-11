@@ -27,7 +27,7 @@
 // - nodeType
 let first = getNode('.first');
 
-console.log(first.nodeType);
+console.log(first.nodeType); //1
 
 // ELEMENT_NODE 와 비교 중 ~ 
 console.log( first.nodeType === document.ELEMENT_NODE);
@@ -36,7 +36,7 @@ console.log( first.nodeType === document.ELEMENT_NODE);
 // - nodeName (vs. tagName)
 
 console.log(first.nodeName);
-console.log(first.tagName);``
+console.log(first.tagName);
 
 
 /* 노드 콘텐츠 읽기/쓰기 ---------------------------------------------------- */
