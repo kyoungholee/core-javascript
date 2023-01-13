@@ -1,4 +1,4 @@
-h1 {
+/* h1 {
   height: 100vh;
   display: flex;
   align-items: center;
@@ -8,4 +8,39 @@ h1 {
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%); */
+} */
+
+.ground {
+  width: 600px;
+  height: 400px;
+  background-color: aquamarine;
+  border: 10px solid black;
+  left: 50px;
+  top: 50px;
+  transform: translate(50%, 50%);
+}
+
+
+.visual{
+  padding: 1rem;
+  background-color: dodgerblue;
+}
+
+.news {
+  padding: 1rem;
+  background-color: orange;
+}
+
+.desc {
+  padding: 1rem;
+  background-color: pink;
+}
+.pop {
+  width: 30vh;
+  height: 30vh;
+  position: absolute;
+  left: 1rem;
+  right: 1rem;
+  background-color: rgba(0, 0, 0, 0.4);
+  display: none;
 }

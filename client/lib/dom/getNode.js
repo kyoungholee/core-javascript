@@ -4,6 +4,7 @@ function getNode(node){
   }
   
   return document.querySelector(node)
+  // document.get
 }
 
 
