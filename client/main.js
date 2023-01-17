@@ -1,17 +1,14 @@
-const pr = new Promise ((resolve, reject) => {
-  console.log("내가 첫번쨰따!!!!!!!!!!!!!!!!!") // 이부부은 비동기임 !! 
-  setTimeout( ()=> {
-    resolve("OK");
-  }, 1000);
-})
+import {xhrData, insertLast} from './lib/index.js'
 
 
-console.log("asdasd");
 
-pr.then( (내가받음) => {
-  console.log(내가받음);
-})
+// xhrData.get(
+//   'https://jsonplaceholder.typicode.com/users/4',
+//   (res) => {
 
-.catch((err) => {
-  console.log(err);
-})
+//       insertLast('body' ,JSON.stringify(res));
+//   },
+//   (err) => {
+//     console.log(err);
+//   }
+// )
