@@ -11,6 +11,9 @@ module.exports = {
         "ecmaVersion": "latest",
         "sourceType": "module"
     },
+    /*변수 선언에 대한 오류를 해결해준다. */
     "rules": {
+        "no-unused-vars" : 'off'
+
     }
 }
