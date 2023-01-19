@@ -1,17 +1,21 @@
-const pr = new Promise ((resolve, reject) => {
-  console.log("내가 첫번쨰따!!!!!!!!!!!!!!!!!") // 이부부은 비동기임 !! 
-  setTimeout( ()=> {
-    resolve("OK");
-  }, 1000);
+
+import { getNode, saveStorage  } from "./lib/index.js";
+
+
+
+const textField = getNode('.textField');
+
+//cost deleteButton = getNode('input[value = "삭제"]');
+
+localStorage('area').then((res) => {
+  textField.value = res;
 })
 
 
-console.log("asdasd");
 
-pr.then( (내가받음) => {
-  console.log(내가받음);
-})
+function inputHandler () {
+  saveStorage('area', textField.value);
+}
 
-.catch((err) => {
-  console.log(err);
-})
+                      //input 핸들러를 이용해 input창을 컨트롤 한다. 
+textField.addEventListener('input', inputHandler) 
