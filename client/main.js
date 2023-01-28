@@ -1,7 +1,5 @@
 /* global gsap */
 
-
-
 import {
   tiger,
   delayP,
@@ -14,9 +12,6 @@ import {
   attr
 } from './lib/index.js';
 
-// rendingUserList 함수 만들기
-// ajax (tiger) get user List
-
 // 유저 카드 생성
 // 생성된 카드로 랜더링
 
@@ -27,17 +22,15 @@ import {
 
 const userCardContainer = getNode('.user-card-inner');
 
-
 async function rendingUserList() {
 
   renderSpinner(userCardContainer)
-  //getNode('.empty-user-card').remove();
 
   try{
     //await delayP(2000)
 
     getNode('.loadingSpinner').remove();
-
+                                //json서버로 부터 데이터를 받아옴
     let response = await tiger.get( 'http://localhost:3000/users/' );
   
     let userData = response.data;
@@ -46,8 +39,8 @@ async function rendingUserList() {
       renderUserCard(userCardContainer,data)
     })
   
+    //색과 애니메이션
     changeColor('.user-card');
-    
     gsap.to(gsap.utils.toArray('.user-card'),{
       x:0,
       opacity:1,
@@ -58,9 +51,7 @@ async function rendingUserList() {
     renderError(userCardContainer)
   }
 }
-
-
-
+//여기까지 get으로 보여준다.
 rendingUserList();
 
 //이벤트 위임을 통해 !! 내가 원하는 버튼 혹은 대상만 찾을 수 있다.
@@ -70,7 +61,6 @@ rendingUserList();
  * 그런 다음 콜백함수에 e.target.closest를 이용해 해당 태그를 가져옵니다.
  *  e.target.closest('button');
  */
-
 function handler(e) {
   //누른 대상에 인접한  button 있으면 허용이다.
   let deleteButton = e.target.closest('button');
@@ -95,28 +85,12 @@ function handler(e) {
   rendingUserList();
   })
   console.log((id));
-
-
-//내가 클릭한 대상에 버튼만 수집!!!!  버튼만 수집 !! 한다. 
-  //console.log(deleteButton);
 }
 
-//이벤트 위임을 이용한다. !! 
+//부모 노드를 받는다.~ 이벤트 위임을 이용한다. !! 
 userCardContainer.addEventListener('click', handler);
 
 
 
-//서버를 파고  json-data를 넣어준다.
-/**
- * json서버 npm으로 이용한 서버 다운로드 
- *  이후 서버과 클라이언트를 열고
- *  서버는 3000번 클라이언트는 5000번이다.
- * 서버에서 get, post, delete, update를  사용 할 수 있다.
- * 
- * get은 그냥 가능하지만 update,delete는 서버를 확인하면서 해야한다.
- *  결국 fetch와 프로미스를 사용 하면 통신이 가능하다. 
- * fetcg로 get .. post . delete할 서버에서 데이터를 받는 역할이고 
- * 프로미스는 then을 이용해 성공과 실패를 나누고 비동기 통신을 할 ㅜㅅ 있다.
- * 
- * 
- */
+
+

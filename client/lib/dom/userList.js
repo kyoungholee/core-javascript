@@ -2,7 +2,7 @@
 import { insertLast } from './insert.js'
 
 
-
+//객체 구조 분해 할당
 const createUserCard = ({
   id = '',
   name = '',
